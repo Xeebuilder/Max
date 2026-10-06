@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maximiliano Rodriguez - Resume</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+  @page {
+    size: letter;
+    margin: 0.42in 0.42in;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    line-height: 1.34;
+    font-size: 8.5pt;
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.42in;
+  }
+
+  @media print {
+    body {
+      padding: 0;
+      max-width: none;
+    }
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 7px;
+    border-bottom: 1.5px solid #0f294a;
+    padding-bottom: 5px;
+  }
+
+  .name {
+    font-size: 18.5pt;
+    font-weight: 700;
+    color: #0f294a;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+  }
+
+  .headline {
+    font-size: 9pt;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-top: 1px;
+    margin-bottom: 3px;
+    letter-spacing: 0.2px;
+  }
+
+  .contact-info {
+    font-size: 8pt;
+    color: #475569;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .contact-info span {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .contact-info a {
+    color: #1e3a8a;
+    text-decoration: none;
+  }
+
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  .section {
+    margin-top: 6px;
+  }
+
+  .section-title {
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #0f294a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 0.75px solid #cbd5e1;
+    padding-bottom: 2px;
+    margin-bottom: 3.5px;
+  }
+
+  .summary {
+    font-size: 8.1pt;
+    color: #334155;
+    text-align: justify;
+  }
+
+  .item {
+    margin-bottom: 3.5px;
+  }
+
+  .item:last-child {
+    margin-bottom: 0;
+  }
+
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+
+  .item-title {
+    font-size: 8.4pt;
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  .item-subtitle {
+    font-weight: 400;
+    color: #475569;
+    font-style: italic;
+  }
+
+  .item-date {
+    font-size: 8pt;
+    color: #64748b;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  li {
+    position: relative;
+    padding-left: 12px;
+    font-size: 7.9pt;
+    color: #334155;
+    margin-bottom: 1.2px;
+    line-height: 1.3;
+  }
+
+  li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #1e3a8a;
+    font-weight: bold;
+  }
+
+  .skills-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .skills-table td {
+    padding: 1.5px 0;
+    font-size: 8pt;
+    vertical-align: top;
+  }
+
+  .skill-cat {
+    font-weight: 600;
+    color: #0f172a;
+    width: 155px;
+    white-space: nowrap;
+  }
+
+  .skill-val {
+    color: #334155;
+  }
+
+  b, strong {
+    font-weight: 600;
+    color: #0f172a;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="name">Maximiliano Rodriguez</div>
+    <div class="headline">Robotics Engineer &bull; Embedded Systems &bull; AI Solutions Architect</div>
+    <div class="contact-info">
+      <span>Puerto La Cruz, Venezuela</span>
+      <span>•</span>
+      <span>Email: <a href="mailto:maxrsilvagni@gmail.com">maxrsilvagni@gmail.com</a></span>
+      <span>•</span>
+      <span>Phone: +58 412 046 6522</span>
+      <span>•</span>
+      <span>LinkedIn: linkedin.com/in/maximilianorodriguez</span>
+      <span>•</span>
+      <span>Studio: <a href="https://papervortexstudio.com" target="_blank">papervortexstudio.com</a></span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p class="summary">
+      High-performance robotics engineer and software developer with 4+ years of competitive international experience. 
+      <strong>Ranked #19 Worldwide (WRO 2023)</strong> and selected as <strong>2026 World Finalist</strong> representing the Venezuelan National Delegation. 
+      Demonstrated technical expertise in embedded C++/C# architecture, autonomous multi-sensor platforms (Raspberry Pi, Arduino), 
+      and real-time signal processing. Founder of <strong>Paper Vortex Studio</strong>, engineering commercial AI automations, 
+      custom business web infrastructure, and interactive software systems.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Honors &amp; Competitive Awards</div>
+    
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">World Robot Olympiad (WRO) International Finalist <span class="item-subtitle">(Panama City, Panama)</span></span>
+        <span class="item-date">Nov 2023</span>
+      </div>
+      <ul>
+        <li>Ranked <strong>#19 Worldwide</strong> and <strong>#4 in the Americas</strong> representing Venezuela; competed among elite global robotics delegations.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">World Robot Olympiad (WRO) International Finalist <span class="item-subtitle">(San Juan, Puerto Rico)</span></span>
+        <span class="item-date">2026</span>
+      </div>
+      <ul>
+        <li>Selected to represent the Venezuela National Delegation at the World Finals with the ORBIT autonomous AI social robotics system.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">WRO Venezuela National Championship <span class="item-subtitle">(Caracas, Venezuela)</span></span>
+        <span class="item-date">2024</span>
+      </div>
+      <ul>
+        <li>Secured a <strong>Top 4 National Ranking</strong> in the high-stakes senior robotics division.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Kurios Robotics Championship <span class="item-subtitle">(Puerto La Cruz, Venezuela)</span></span>
+        <span class="item-date">2022 – 2025</span>
+      </div>
+      <ul>
+        <li>Awarded <strong>1st Place Overall (2022, 2023)</strong> and <strong>2nd Place Overall (2024, 2025)</strong> across 4 consecutive competition seasons.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Engineering Systems &amp; Commercial Ventures</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">ORBIT – Autonomous Social Robot <span class="item-subtitle">| Golden Codex (WRO Team)</span></span>
+        <span class="item-date">Oct 2025 – Present</span>
+      </div>
+      <ul>
+        <li>Architected an autonomous social robot on <strong>Raspberry Pi 5</strong> equipped with a custom 4-motor chassis and animated facial telemetry.</li>
+        <li>Engineered a real-time <strong>acoustic trilateration</strong> localization system using 3 directional microphones to triangulate human speakers.</li>
+        <li>Integrated conversational AI to guide public discourse toward culture and STEM; modeled as an interactive kiosk for museums.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Founder &amp; Principal Solutions Developer <span class="item-subtitle">| Paper Vortex Studio</span></span>
+        <span class="item-date">Aug 2024 – Present</span>
+      </div>
+      <ul>
+        <li>Founded a commercial technology studio delivering enterprise AI integrations, custom web architecture, and interactive software.</li>
+        <li>Engineered 24/7 AI conversational automation for real estate and business sales, integrating WhatsApp APIs with live property databases for instant inventory inquiries, intelligent lead qualification, and CRM logging (<a href="https://papervortexstudio.com" target="_blank">papervortexstudio.com</a>).</li>
+        <li>Designs, deploys, and manages high-performance web infrastructure and automated digital workflows for emerging entrepreneurships.</li>
+        <li>Directs an experimental game mechanics lab; designed procedural state machines and physics in <strong>Unity (C#)</strong> for <em>'The Other Side'</em>.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Automated Maritime Tide Monitoring System <span class="item-subtitle">| Tomorrow’s Innovators (WRO Team)</span></span>
+        <span class="item-date">Mar 2023 – Dec 2023</span>
+      </div>
+      <ul>
+        <li>Prototyped a real-time coastal flood hazard alert system on <strong>Arduino UNO</strong> targeting maritime safety and coral reef conservation.</li>
+        <li>Programmed analog signal filters in <strong>C++</strong> across multi-depth submersible sensor terminals to trigger instant color-coded LED warnings.</li>
+        <li>Built and demonstrated a closed-loop fluid simulation apparatus driven by automated water pumps to validate variable tidal spikes.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Autonomous Seed-to-Microgreen Agricultural System <span class="item-subtitle">| Tomorrow’s Innovators (WRO Team)</span></span>
+        <span class="item-date">Jan 2024 – Dec 2024</span>
+      </div>
+      <ul>
+        <li>Engineered a fully autonomous indoor agricultural robot executing an 8-day seed-to-harvest growth cycle aligned with <strong>UN SDG-12</strong>.</li>
+        <li>Integrated Arduino UNO, Raspberry Pi 4, stepper motors, servos, and programmed timed LED grow lighting schedules in C++.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Technical Proficiencies</div>
+    <table class="skills-table">
+      <tr>
+        <td class="skill-cat">Programming &amp; Software:</td>
+        <td class="skill-val">C++, C#, Python (Certified), HTML5/CSS/JavaScript, Bash/Shell Scripting, Git/GitHub</td>
+      </tr>
+      <tr>
+        <td class="skill-cat">AI &amp; Enterprise Integration:</td>
+        <td class="skill-val">LLM API Integrations, WhatsApp Business Automation, Conversational Agents, CRM &amp; Database Sync</td>
+      </tr>
+      <tr>
+        <td class="skill-cat">Embedded Hardware &amp; IoT:</td>
+        <td class="skill-val">Raspberry Pi (4 &amp; 5), Arduino (UNO), Steppers, Servos, Analog Sensors, Circuit Prototyping</td>
+      </tr>
+      <tr>
+        <td class="skill-cat">Core Specialties:</td>
+        <td class="skill-val">Autonomous Robotics, Acoustic Trilateration, Real-Time Signal Processing, Full-Stack Web Infrastructure</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Education, Training &amp; Athletics</div>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Colegio Ítalo Venezolano "Angelo De Marta" <span class="item-subtitle">— High School Diploma</span></span>
+        <span class="item-date">Expected June 2027</span>
+      </div>
+      <ul>
+        <li><strong>Academic Standing:</strong> 10th Grade (Sophomore). Consistent top-tier academic marks in Mathematics, Physics, and Chemistry.</li>
+        <li><strong>Supplemental Technical Training:</strong> Kurios Academy (Robotics &amp; Strategy, 2022–Pres.); Tech Academy (Advanced Prototyping, 2025–Pres.); ADAKADEMY (Python Certification, 2022).</li>
+        <li><strong>Athletics &amp; Discipline:</strong> Angelo Escudero Taekwondo Academy (2018–Pres.) — <strong>Red Belt with 1 Black Stripe</strong>; 8 consecutive years of competitive training.</li>
+        <li><strong>Languages:</strong> Spanish (Native), English (C1 – Advanced Professional Proficiency), French (A2 – Elementary).</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
