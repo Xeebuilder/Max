@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maximiliano Rodriguez — Robotics Engineering &amp; Autonomous Systems</title>
+  
+  <meta name="title" content="Maximiliano Rodriguez — Robotics Engineering &amp; Autonomous Systems" />
+  <meta name="description" content="Official portfolio of Maximiliano Rodriguez: World Robot Olympiad #19 Worldwide Finalist, Embedded Systems, C++/C#, Founder of Paper Vortex Studio." />
+
+  <!-- Restrained, single-accent aerospace engineering design system -->
+  <style>
+    :root {
+      --bg: #090c13;
+      --bg-surface: #10141f;
+      --bg-surface-elevated: #161b2a;
+      --border: #1a2233;
+      --border-subtle: #242d42;
+      --border-active: #3b82f6;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      /* Single Disciplined Accent: Precision Cobalt */
+      --accent: #2563eb;
+      --accent-light: #3b82f6;
+      --accent-soft: rgba(37, 99, 235, 0.1);
+      --accent-border: rgba(37, 99, 235, 0.3);
+      --live-green: #10b981;
+
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      background-color: var(--bg);
+      line-height: 1.6;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(9, 12, 19, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .brand-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+
+    .brand-title {
+      font-size: 0.74rem;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+    }
+
+    .nav-menu {
+      display: none;
+      align-items: center;
+      gap: 20px;
+    }
+
+    @media (min-width: 860px) {
+      .nav-menu {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.15s ease;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      border: 1px solid transparent;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface);
+      border-color: var(--border-subtle);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-surface-elevated);
+      border-color: var(--border-active);
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 124px 0 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--live-green);
+    }
+
+    .hero-title {
+      font-size: 2.7rem;
+      font-weight: 800;
+      letter-spacing: -1.2px;
+      line-height: 1.15;
+      color: var(--text);
+      max-width: 860px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 3.6rem;
+      }
+    }
+
+    .hero-title-accent {
+      color: var(--accent-light);
+    }
+
+    .hero-lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 760px;
+      margin-bottom: 32px;
+    }
+
+    .hero-lead strong {
+      color: var(--text);
+    }
+
+    /* Section Direct Jump Buttons (Under Hero) */
+    .section-nav-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .section-nav-btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+    }
+
+    .section-nav-btn:hover {
+      background: var(--bg-surface-elevated);
+      border-color: var(--border-active);
+      color: white;
+    }
+
+    .section-nav-btn span.num {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-light);
+    }
+
+    /* Metric Counters Bar */
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .metrics-bar {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .metric-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      transition: border-color 0.2s ease;
+    }
+
+    .metric-item:hover {
+      border-color: var(--border-subtle);
+    }
+
+    .metric-value {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .metric-title {
+      font-size: 0.76rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    /* Sections */
+    .section {
+      padding: 76px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      margin-bottom: 36px;
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent-light);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-heading {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      max-width: 640px;
+    }
+
+    /* Systems Grid */
+    .systems-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .system-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 26px;
+      transition: border-color 0.2s ease;
+    }
+
+    @media (min-width: 960px) {
+      .system-card {
+        grid-template-columns: 1.25fr 0.75fr;
+      }
+    }
+
+    .system-card:hover {
+      border-color: var(--border-active);
+    }
+
+    .system-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .system-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .system-period {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+
+    .system-team {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--accent-light);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .system-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    /* Technical Spec Table */
+    .tech-specs {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      background: rgba(9, 12, 19, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .tech-specs td {
+      padding: 8px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tech-specs tr:last-child td {
+      border-bottom: none;
+    }
+
+    .tech-specs td.key {
+      width: 32%;
+      font-family: var(--font-mono);
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .tech-specs td.val {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* Visual Telemetry Box */
+    .telemetry-box {
+      background: rgba(9, 12, 19, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 220px;
+    }
+
+    .telemetry-icon-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .telemetry-box:hover .telemetry-icon-btn {
+      border-color: var(--border-active);
+      color: var(--accent-light);
+    }
+
+    .telemetry-title {
+      font-weight: 700;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .telemetry-sub {
+      font-size: 0.74rem;
+      font-family: var(--font-mono);
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    /* Achievements Table */
+    .achieve-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-surface);
+    }
+
+    .achieve-table th {
+      text-align: left;
+      padding: 14px 20px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-dim);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .achieve-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      font-size: 0.9rem;
+    }
+
+    .achieve-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .achieve-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: var(--bg);
+      border: 1px solid var(--border-subtle);
+      color: var(--accent-light);
+      white-space: nowrap;
+    }
+
+    /* Preparation Section */
+    .prep-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .prep-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .prep-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px;
+      transition: border-color 0.15s ease;
+    }
+
+    .prep-card:hover {
+      border-color: var(--border-subtle);
+    }
+
+    .prep-tag {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--accent-light);
+      margin-bottom: 6px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .prep-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .prep-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Studio Panel */
+    .studio-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    @media (min-width: 860px) {
+      .studio-panel {
+        grid-template-columns: 1.25fr 0.75fr;
+        align-items: center;
+      }
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      max-width: 640px;
+      width: 100%;
+      padding: 28px;
+      position: relative;
+    }
+
+    .modal-close-icon {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    .modal-close-icon:hover {
+      color: var(--text);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 60px 0 40px 0;
+      background: var(--bg);
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    svg.icon {
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-logo">MR</div>
+        <div class="brand-info">
+          <span class="brand-name">Maximiliano Rodriguez</span>
+          <span class="brand-title">Robotics &amp; Autonomous Systems</span>
+        </div>
+      </div>
+
+      <!-- Navigation Section Buttons -->
+      <div class="nav-menu">
+        <a href="#systems" class="nav-link">Systems</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#preparation" class="nav-link">Preparation</a>
+        <a href="#studio" class="nav-link">Studio</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <!-- Right CTAs -->
+      <div class="nav-actions">
+        <a href="Maximiliano_Rodriguez_Resume_Optimized.pdf" target="_blank" download class="btn btn-secondary">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          <span>CV [PDF]</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="container">
+      
+      <!-- Live Status Pill & Location -->
+      <div class="hero-badge-row">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>World Robot Olympiad International Finalist (2023 &amp; 2026)</span>
+        </div>
+        <div class="status-badge" style="color: var(--text-dim);">
+          <span>Puerto La Cruz, Venezuela</span>
+        </div>
+      </div>
+
+      <h1 class="hero-title">
+        Engineering Intelligent Systems from <span class="hero-title-accent">Physical Silicon</span> to <span class="hero-title-accent">Real-Time Logic</span>.
+      </h1>
+
+      <p class="hero-lead">
+        I am <strong>Maximiliano Rodriguez</strong> (16), a competitive robotics engineer, embedded hardware developer, and technology founder. Ranked <strong>#19 Worldwide</strong> at the 2023 World Robot Olympiad in Panama and representing the Venezuelan National Delegation at the <strong>2026 World Finals</strong> in Puerto Rico. Founder of <strong>Paper Vortex Studio</strong>, building enterprise AI integrations, custom business web infrastructure, and autonomous robotics systems.
+      </p>
+
+      <!-- SECTION JUMP BUTTONS (Above Content) -->
+      <div class="section-nav-strip">
+        <a href="#systems" class="section-nav-btn">
+          <span class="num">01</span>
+          <span>Robotics Systems</span>
+        </a>
+        <a href="#achievements" class="section-nav-btn">
+          <span class="num">02</span>
+          <span>Achievements</span>
+        </a>
+        <a href="#preparation" class="section-nav-btn">
+          <span class="num">03</span>
+          <span>Technical Preparation</span>
+        </a>
+        <a href="#studio" class="section-nav-btn">
+          <span class="num">04</span>
+          <span>Paper Vortex Studio</span>
+        </a>
+        <a href="#contact" class="section-nav-btn">
+          <span class="num">05</span>
+          <span>Contact &amp; CV</span>
+        </a>
+      </div>
+
+      <!-- Quick Verified Metrics Bar -->
+      <div class="metrics-bar">
+        <div class="metric-item">
+          <div class="metric-value">#19</div>
+          <div class="metric-title">Worldwide Standing (WRO 2023)</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">#4</div>
+          <div class="metric-title">Americas Regional Rank</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">4 Yrs</div>
+          <div class="metric-title">Consecutive Robotics Podiums</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">8 Yrs</div>
+          <div class="metric-title">Taekwondo (Red-Black Belt)</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 01: ROBOTICS & SYSTEMS -->
+  <section id="systems" class="section">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">01 // Engineering Systems</span>
+        <h2 class="section-heading">Selected Hardware &amp; Autonomous Builds</h2>
+        <p class="section-subtitle">
+          Engineered for international WRO standards, sensor fusion reliability, and deployable telemetry.
+        </p>
+      </div>
+
+      <div class="systems-grid">
+        
+        <!-- SYSTEM 1: ORBIT -->
+        <div class="system-card">
+          <div>
+            <div class="system-header">
+              <h3 class="system-title">ORBIT: AI Social Robot with Acoustic Trilateration</h3>
+              <span class="system-period">2025 – Present</span>
+            </div>
+            <span class="system-team">Golden Codex (WRO Senior Open) • Lead Embedded Engineer</span>
+            <p class="system-desc">
+              An autonomous social robotics platform engineered for public cultural and museum spaces. Integrates a custom <strong>acoustic trilateration localization algorithm</strong> running on 3 directional microphones positioned at 120-degree offsets. The system processes time-difference-of-arrival (TDoA) audio phase signals in C++ to physically locate, track, and orient toward human speakers in real-world ambient noise.
+            </p>
+
+            <table class="tech-specs">
+              <tr>
+                <td class="key">Coordinator</td>
+                <td class="val">Raspberry Pi 5 (8GB) running high-level conversational AI</td>
+              </tr>
+              <tr>
+                <td class="key">Localization</td>
+                <td class="val">3-Directional microphone array with TDoA acoustic trilateration</td>
+              </tr>
+              <tr>
+                <td class="key">Mobility</td>
+                <td class="val">4-Motor omnidirectional mobile chassis with PID feedback loop</td>
+              </tr>
+              <tr>
+                <td class="key">Standing</td>
+                <td class="val">Representing Venezuela at the 2026 WRO World Finals (San Juan, Puerto Rico)</td>
+              </tr>
+            </table>
+
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <button class="btn btn-secondary" onclick="openModal('ORBIT Telemetry &amp; Localization Demo', 'Acoustic trilateration localization test across 3 directional microphones running on Raspberry Pi 5 with PID chassis response.')">
+                <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span>View System Telemetry</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="telemetry-box">
+            <div class="telemetry-icon-btn" onclick="openModal('ORBIT Telemetry &amp; Localization Demo', 'Acoustic trilateration localization test across 3 directional microphones running on Raspberry Pi 5 with PID chassis response.')">
+              <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="telemetry-title">System Telemetry Log</div>
+            <div class="telemetry-sub">Acoustic Trilateration (TDoA) &amp; Drive Logic</div>
+          </div>
+        </div>
+
+        <!-- SYSTEM 2: Maritime Tide Monitor -->
+        <div class="system-card">
+          <div>
+            <div class="system-header">
+              <h3 class="system-title">Automated Maritime Tide Monitoring System</h3>
+              <span class="system-period">2023</span>
+            </div>
+            <span class="system-team">Tomorrow’s Innovators (WRO Team) • Firmware &amp; Prototyping</span>
+            <p class="system-desc">
+              Autonomous coastal safety alert station mitigating ship grounding hazards and protecting fragile coral reef formations during sudden tidal drops. Submerged multi-depth conductivity probes are monitored by an Arduino UNO running C++ signal debounce and analog hysteresis filters to filter natural wave action from true tide shift, triggering real-time optical navigation warnings.
+            </p>
+
+            <table class="tech-specs">
+              <tr>
+                <td class="key">Embedded Core</td>
+                <td class="val">Arduino UNO microcontroller with C++ analog threshold processing</td>
+              </tr>
+              <tr>
+                <td class="key">Submersible Hardware</td>
+                <td class="val">Waterproof terminal array with conductivity sensor integration</td>
+              </tr>
+              <tr>
+                <td class="key">Validation Apparatus</td>
+                <td class="val">Closed-loop water-pump fluid simulation rig for dynamic spike testing</td>
+              </tr>
+              <tr>
+                <td class="key">World Standing</td>
+                <td class="val">Ranked #19 Worldwide &amp; #4 in the Americas (WRO Panama 2023)</td>
+              </tr>
+            </table>
+
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <button class="btn btn-secondary" onclick="openModal('Maritime Tide Monitoring Demonstration', 'Demonstration of submerged multi-depth sensor terminals triggering navigation beacons under pump-driven tidal fluctuations.')">
+                <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span>View Rig Demonstration</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="telemetry-box">
+            <div class="telemetry-icon-btn" onclick="openModal('Maritime Tide Monitoring Demonstration', 'Demonstration of submerged multi-depth sensor terminals triggering navigation beacons under pump-driven tidal fluctuations.')">
+              <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="telemetry-title">Fluid Test Rig Telemetry</div>
+            <div class="telemetry-sub">Analog Hysteresis &amp; Submersible Sensors</div>
+          </div>
+        </div>
+
+        <!-- SYSTEM 3: Microgreen Agriculture -->
+        <div class="system-card">
+          <div>
+            <div class="system-header">
+              <h3 class="system-title">Autonomous Microgreen Agricultural System</h3>
+              <span class="system-period">2024</span>
+            </div>
+            <span class="system-team">Tomorrow’s Innovators • Systems Architecture</span>
+            <p class="system-desc">
+              Closed-loop agricultural robot delivering an autonomous 8-day seed-to-harvest microgreen growth cycle. Operates via dual Arduino UNO actuation and Raspberry Pi 4 environmental logging, controlling precision stepper motor seed dispensers, servo nutrient feeders, and scheduled PWM LED grow light cycles. Aligned with <strong>UN SDG-12</strong> (Responsible Consumption and Production).
+            </p>
+
+            <table class="tech-specs">
+              <tr>
+                <td class="key">Controllers</td>
+                <td class="val">Arduino UNO (Actuation) + Raspberry Pi 4 (Sensors &amp; Logging)</td>
+              </tr>
+              <tr>
+                <td class="key">Actuation</td>
+                <td class="val">Stepper motor distribution rail &amp; high-torque micro servos</td>
+              </tr>
+              <tr>
+                <td class="key">Standing</td>
+                <td class="val">Top 4 National Placement, WRO Venezuela Championship 2024</td>
+              </tr>
+            </table>
+
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <button class="btn btn-secondary" onclick="openModal('Microgreen Farming Robot Cycle', 'Demonstration of automated seed distribution and closed-loop LED grow cycle.')">
+                <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span>View Growth Cycle Demo</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="telemetry-box">
+            <div class="telemetry-icon-btn" onclick="openModal('Microgreen Farming Robot Cycle', 'Demonstration of automated seed distribution and closed-loop LED grow cycle.')">
+              <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="telemetry-title">Automated Cycle Log</div>
+            <div class="telemetry-sub">Closed-Loop 8-Day Growth Automation</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 02: ACHIEVEMENTS & RECORD -->
+  <section id="achievements" class="section">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">02 // Competitive Record</span>
+        <h2 class="section-heading">Honors &amp; International Competitions</h2>
+        <p class="section-subtitle">
+          Verified tournament records across international delegations and four consecutive competition seasons.
+        </p>
+      </div>
+
+      <table class="achieve-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Competition</th>
+            <th style="width: 15%;">Standing</th>
+            <th>Location &amp; Project Context</th>
+            <th style="width: 10%;">Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>WRO International World Finals</strong></td>
+            <td><span class="achieve-badge">#19 Worldwide</span></td>
+            <td>Represented the Venezuelan National Delegation in Panama City, Panama. Ranked 4th across all delegations in the Americas (Senior Open).</td>
+            <td style="font-family: var(--font-mono); color: var(--text-dim);">2023</td>
+          </tr>
+          <tr>
+            <td><strong>WRO World Finals Selection</strong></td>
+            <td><span class="achieve-badge">World Finalist</span></td>
+            <td>Selected to represent Venezuela with the ORBIT AI social robotics system at the World Finals in San Juan, Puerto Rico.</td>
+            <td style="font-family: var(--font-mono); color: var(--text-dim);">2026</td>
+          </tr>
+          <tr>
+            <td><strong>WRO Venezuela National Championship</strong></td>
+            <td><span class="achieve-badge">Top 4 National</span></td>
+            <td>Senior national finalist with the autonomous closed-loop microgreen agricultural robotics system.</td>
+            <td style="font-family: var(--font-mono); color: var(--text-dim);">2024</td>
+          </tr>
+          <tr>
+            <td><strong>Kurios Robotics Championship</strong></td>
+            <td><span class="achieve-badge">4-Year Champion</span></td>
+            <td>1st Place Overall (2022, 2023) and 2nd Place Overall (2024, 2025) across 4 consecutive years of regional robotics competition.</td>
+            <td style="font-family: var(--font-mono); color: var(--text-dim);">2022–25</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+
+  <!-- 03: TECHNICAL PREPARATION & TRAINING -->
+  <section id="preparation" class="section">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">03 // Preparation &amp; Academics</span>
+        <h2 class="section-heading">Technical Training &amp; Rigor</h2>
+        <p class="section-subtitle">
+          Foundational engineering academies, competitive robotics training, and disciplined athletic development.
+        </p>
+      </div>
+
+      <div class="prep-grid">
+        
+        <div class="prep-card">
+          <span class="prep-tag">Tech Academy // 2025 – Present</span>
+          <h3 class="prep-title">Advanced Competitive Robotics &amp; Prototyping</h3>
+          <p class="prep-desc">
+            Specialized intensive training in Arduino systems, high-frequency sensor integration, PCB considerations, and competitive hardware prototyping directly targeted for WRO international challenges.
+          </p>
+        </div>
+
+        <div class="prep-card">
+          <span class="prep-tag">Kurios Academy // 2022 – Present</span>
+          <h3 class="prep-title">Robotics Engineering &amp; Strategic Design</h3>
+          <p class="prep-desc">
+            Four years of continuous advanced robotics training focusing on autonomous mechanisms, match strategy, algorithmic efficiency, and collaborative system architecture under strict rule constraints.
+          </p>
+        </div>
+
+        <div class="prep-card">
+          <span class="prep-tag">ADAKADEMY // 2022</span>
+          <h3 class="prep-title">TechCamp Python Engineering Certification</h3>
+          <p class="prep-desc">
+            Completed intensive software engineering certification in Python covering fundamental algorithms, data structures, and computational logic.
+          </p>
+        </div>
+
+        <div class="prep-card">
+          <span class="prep-tag">Angelo Escudero Academy // 2018 – Present</span>
+          <h3 class="prep-title">Taekwondo (Red Belt w/ Black Stripe)</h3>
+          <p class="prep-desc">
+            8 consecutive years of competitive martial arts training. Cultivated high physical conditioning, mental discipline, stress management, and rapid reflex coordination.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04: PAPER VORTEX STUDIO -->
+  <section id="studio" class="section">
+    <div class="container">
+      
+      <div class="studio-panel">
+        <div>
+          <span class="section-tag" style="margin-bottom: 6px;">04 // Commercial Technology Venture</span>
+          <h2 style="font-size: 2.1rem; font-weight: 800; color: white; letter-spacing: -0.5px; margin-bottom: 6px;">
+            Paper Vortex Studio
+          </h2>
+          <p style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-light); margin-bottom: 16px;">
+            Commercial Venture &amp; Tech Studio • <a href="https://papervortexstudio.com" target="_blank" style="text-decoration: underline;">papervortexstudio.com</a>
+          </p>
+
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 18px;">
+            Founder and lead systems engineer of <strong>Paper Vortex Studio</strong>, a personal technology venture dedicated to enterprise AI integrations, custom web architecture, and automated operations for modern businesses, realtors, and entrepreneurships.
+          </p>
+
+          <table class="tech-specs" style="margin-bottom: 22px;">
+            <tr>
+              <td class="key">Enterprise AI</td>
+              <td class="val">24/7 WhatsApp Conversational AI Agents connected to live database inventories (e.g. Real Estate lead qualification &amp; listing queries)</td>
+            </tr>
+            <tr>
+              <td class="key">Web Architecture</td>
+              <td class="val">End-to-end web development, custom landing pages, and ongoing infrastructure management for emerging businesses</td>
+            </tr>
+            <tr>
+              <td class="key">Interactive R&amp;D</td>
+              <td class="val">Experimental physics and game mechanics laboratory in Unity (C#) — <i>'The Other Side'</i></td>
+            </tr>
+          </table>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://papervortexstudio.com" target="_blank" class="btn btn-primary">
+              <span>Explore papervortexstudio.com</span>
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+            <button class="btn btn-secondary" onclick="openModal('Paper Vortex Studio — AI Solutions &amp; Web Platform', 'Commercial agency delivering 24/7 WhatsApp AI sales assistants, live inventory sync for real estate agencies, custom web platforms, and automated business workflows.')">
+              View Solutions Overview
+            </button>
+          </div>
+        </div>
+
+        <div class="telemetry-box">
+          <div class="telemetry-icon-btn" onclick="window.open('https://papervortexstudio.com', '_blank')">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div class="telemetry-title">Paper Vortex Studio</div>
+          <div class="telemetry-sub">Enterprise AI • Web Platforms • Interactive R&amp;D</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05: CONTACT & FOOTER -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      
+      <div class="footer-content">
+        <div>
+          <h3 style="font-size: 1.45rem; font-weight: 700; color: white; margin-bottom: 6px;">Maximiliano Rodriguez</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">
+            Open to international research fellowships, hackathons, and scholarship inquiries.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="mailto:maxrsilvagni@gmail.com" class="btn btn-primary">
+            <span>Email Maximiliano</span>
+          </a>
+          <button onclick="copyEmail()" id="copyBtn" class="btn btn-secondary">
+            <span id="copyBtnText">Copy Email</span>
+          </button>
+          <a href="Maximiliano_Rodriguez_Resume_Optimized.pdf" target="_blank" download class="btn btn-secondary">
+            <span>Download CV [PDF]</span>
+          </a>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); margin-top: 36px; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: var(--text-dim); font-family: var(--font-mono);">
+        <div>© 2026 Maximiliano Rodriguez • Puerto La Cruz, Venezuela</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="https://github.com/maxrsilvagni" target="_blank" style="color: var(--text-muted); hover: color: white;">GitHub</a>
+          <a href="https://linkedin.com/in/maximilianorodriguez" target="_blank" style="color: var(--text-muted); hover: color: white;">LinkedIn</a>
+          <a href="https://papervortexstudio.com" target="_blank" style="color: var(--accent-light);">papervortexstudio.com</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- VIDEO DEMO MODAL -->
+  <div class="modal-backdrop" id="demoModal" onclick="closeModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close-icon" onclick="closeModal()">&times;</button>
+      <h3 id="modalTitle" style="font-size: 1.25rem; font-weight: 700; color: white;">System Demonstration</h3>
+      <p id="modalDesc" style="font-size: 0.86rem; color: var(--text-muted); margin-top: 4px;"></p>
+      
+      <div style="width: 100%; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--border); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-dim); font-family: var(--font-mono); font-size: 0.8rem; text-align: center; padding: 20px; margin: 18px 0;">
+        <p style="color: var(--text); font-weight: 600; margin-bottom: 4px;">Video Demonstration Player</p>
+        <p style="font-size: 0.75rem; color: var(--text-dim); max-width: 380px;">
+          Paste your YouTube / Vimeo embed URL or local MP4 recording of your hardware/gameplay in action.
+        </p>
+      </div>
+
+      <div style="text-align: right;">
+        <button class="btn btn-secondary" onclick="closeModal()">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function copyEmail() {
+      navigator.clipboard.writeText("maxrsilvagni@gmail.com").then(() => {
+        const text = document.getElementById("copyBtnText");
+        text.innerText = "Copied to Clipboard! ✓";
+        setTimeout(() => {
+          text.innerText = "Copy Email";
+        }, 2200);
+      }).catch(() => {
+        prompt("Copy this email:", "maxrsilvagni@gmail.com");
+      });
+    }
+
+    function openModal(title, desc) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('demoModal').classList.add('open');
+    }
+
+    function closeModal(e) {
+      document.getElementById('demoModal').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>
